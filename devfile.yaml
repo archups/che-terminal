@@ -2,7 +2,8 @@ schemaVersion: 2.1.0
 metadata:
   name: devs-workspace
 components:
-  - container:
+  - name: kubespace
+    container:
       args:
         - '-f'
         - /dev/null
@@ -10,7 +11,17 @@ components:
         - tail      
       env:
       - name: KUBECONFIG
-        value: /projects/kubeconfig
+        value: /projects/kubeconfig/config
       image: 'quay.io/archups/che-ws-terminal:v0.1.0-0'
       sourceMapping: /projects
-    name: devs
+      volumeMounts:
+        - name: docker
+          path: /var/run/docker.sock
+        - name: kubeconfig
+          path: /projects/kubeconfig
+  - name: docker
+    volume:
+      size: 256Mi
+  - name: kubeconfig
+    volume:
+      size: 256Mi

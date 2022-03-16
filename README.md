@@ -1,14 +1,14 @@
-# che-workspace
+# che-workspace-guide
 Repository to manage user guide and customizations for Che Workspace.
 
 
 ## Create CHE Workspace from the remote devfile using the dashboard
 
 Here we are using Factory loader approach to create your initial workspace using below URL.
-https://$CHE_HOST/dashboard/#https://github.com/kubermatic/kubeone-for-devs.git
+https://$CHE_HOST/dashboard/#https://github.com/archups/che-workspace-guide.git
 
 For example, if the $CHE_HOST is che.example.com, then use below URL to create your workspace
-https://che.example.com/dashboard/#https://github.com/kubermatic/kubeone-for-devs.git
+https://che.example.com/dashboard/#https://github.com/archups/che-workspace-guide.git
 
 For more information, checkout the official [Eclipse CHE Create Workspace](https://www.eclipse.org/che/docs/che-7/end-user-guide/creating-a-workspace-from-remote-devfile/) docs.
 
@@ -25,7 +25,7 @@ Following block reference to show projects section in the devfile.
 projects:
   - git:
       remotes:
-        origin: 'https://github.com/archups/che-workspace.git'
+        origin: 'https://github.com/archups/che-workspace-guide.git'
     name: che-workspace
   - git:
       remotes:
