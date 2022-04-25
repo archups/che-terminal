@@ -2,7 +2,7 @@ schemaVersion: 2.1.0
 metadata:
   name: devs-workspace
 components:
-  - name: kubespace
+  - name: kubechespace
     container:
       args:
         - '-f'
@@ -16,7 +16,7 @@ components:
         value: 'unix:///var/run/containerd/containerd.sock'
       - name: KUBECONFIG
         value: /.kube/config
-      image: 'quay.io/archups/che-ws-terminal:v0.1.0-0'
+      image: 'quay.io/archups/devone-terminal:v0.1.0-ubuntu'
       sourceMapping: /projects
       volumeMounts:
         - name: crictl
